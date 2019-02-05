@@ -44,8 +44,6 @@ spec:
             ## uncomment following line and specify values if needed for multiple provider snapshot locations
             # - --default-volume-snapshot-locations=<provider-1:location-1,provider-2:location-2,...>
           volumeMounts:
-            - name: cloud-credentials
-              mountPath: /credentials
             - name: plugins
               mountPath: /plugins
             - name: scratch
@@ -56,9 +54,6 @@ spec:
             - name: ARK_SCRATCH_DIR
               value: /scratch
       volumes:
-        - name: cloud-credentials
-          secret:
-            secretName: cloud-credentials
         - name: plugins
           emptyDir: {}
         - name: scratch
